@@ -1,9 +1,6 @@
 <?php
 namespace website\controller;
 
-use Slim\Http\Request;
-use Slim\Http\Response;
-
 abstract class Controller {
 	protected $view;
 	
@@ -12,6 +9,6 @@ abstract class Controller {
 	}
 	
 	protected function render($response, $template, $args = []) {
-        return $this->view->render($response, $template, $args);
+        	return $this->view->render($response, $template, $args);
     }
 }
