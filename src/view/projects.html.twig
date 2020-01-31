@@ -1,29 +1,47 @@
 {% extends "base.html.twig" %}
 {% block content %}
-<div class="card mx-auto my-4 w-75">
-    <img src= "https://cdn.flybgd.com/files/photo/carre/1554992016-6532.png?v=1556016085" style="max-width: 25%">
+<div class="card mx-auto my-4 w-50">
+    <img src= "https://cdn.flybgd.com/files/photo/carre/1554992016-6532.png?v=1556016085" class="mx-auto" style="width: 20%;">
     <div class="card-body">
-        <h5 class="card-title">Flight assistant</h5>
+        <h2 class="card-title">Flight assistant for paragliders</h2>
         <hr class="my-4">
-        <p class="card-text">Development of a flight assistant for paragliders. Developped in Python on a RaspBerry Pi 3</p>
+        <p class="card-text">
+		<br>This was my first project in cooperation with a business.
+		<br>I developped the project on a RaspBerry Pi 3, in Python.
+		<br>The main goal is to create an assistant allowing for a free flight pilot to position himself in an 3D environment.
+		<br>To do it, the assistant needs to be fully vocal and provide multiple flight information to the pilot.
+		<br>It must be some kind of a discussion between the pilot and the assistant.
+	</p>
     </div>
 </div>
 
-<div class="card mx-auto my-4 w-75">
+<div class="card mx-auto my-4 w-50">
     <img src="" class="card-img-top">
     <div class="card-body">
-        <h5 class="card-title">Application of reservation</h5>
+        <h2 class="card-title">Application of reservation</h2>
         <hr class="my-4">
-        <p class="card-text">Development of an application of booking. This project is a Client-server application in C. The idea was to work on the socket technology in C.</p>
+        <p class="card-text"> 
+		<br>I had to design an application Client-server in C. 
+		<br>This application had a basic visual interface, by the terminal interface.
+		<br>The goal was to work on the communication between one server and multiple clients.
+		<br>I used the sockets technology to manage the discussion between the two side. 
+		<br>I also designed a solution with some kind of a parallelism to handle multiple requests of several clients at a same time.
+	</p>
     </div>
 </div>
 
-<div class="card mx-auto my-4 w-75">
-    <img src="https://papergames.io/images/tic-tac-toe/thumbnail.png" class="card-img-top">
+<div class="card mx-auto my-4 w-50">
+    <img src="https://papergames.io/images/tic-tac-toe/thumbnail.png" class="mx-auto" style="width: 20%;">
     <div class="card-body">
-        <h5 class="card-title">RMI Games</h5>
+        <h2 class="card-title">RMI Games</h2>
         <hr class="my-4">
-        <p class="card-text">I had to develop two games in JAVA. The first was a simple "Guess the word". The second was a multiplayer morpion. It's a local multiplayer game where I used the RMI technology.>
+        <p class="card-text">
+		I had to develop an application including two games in Java.
+		<br>The first was a simple "Guess the word", nothing really relevant about it. 
+		<br>However, the second was a multiplayer morpion. It was a local multiplayer game where I had to use the RMI technology.
+		<br>Unlike the previous project, I couldn't use more than one thread to manage the clients. 
+		<br>So I did a concurrent solution, where the requests will be treated one by one with a first-come logic.
+	</p>
     </div>
 </div>
 {% endblock %}
