@@ -36,5 +36,16 @@ $app->get('/contact', function (Request $request, Response $response){
     return $this->view->render($response, 'contact.html.twig');
 })->setName('contact');
 
+$app->get('/image', function($request, $response, $args) {    
+    $image = @file_get_contents("./img/back.jpg");
+   if($image === FALSE) {
+       $handler = $this->notFoundHandler;
+       return $handler($request, $response);    
+    }
+
+    $response->write($image);
+    return $response->withHeader('Content-Type', FILEINFO_MIME_TYPE);
+})->setName('image');
+
 //lancement de l'appli
 $app->run();
