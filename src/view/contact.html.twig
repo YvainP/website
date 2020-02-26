@@ -1,66 +1,46 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-<form id="contact-form" method="post" action="contact.php" role="form">
-
-    <div class="messages"></div>
-
-    <div class="controls">
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="form_name">Firstname *</label>
-                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="form_lastname">Lastname *</label>
-                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="form_email">Email *</label>
-                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="form_need">Please specify your need *</label>
-                    <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
-                        <option value=""></option>
-                        <option value="Request quotation">Request quotation</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="form_message">Message *</label>
-                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <input type="submit" class="btn btn-success btn-send" value="Send message">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p class="text-muted">
-                    <strong>*</strong> These fields are required.
-            </div>
-        </div>
-    </div>
-</form>
+<div class="card mx-auto my-4 w-50">
+	<div class="card-header text-center">
+		<h3>Contact Informations</h3> 
+	</div>
+	<div class="card-body d-flex flex-column bd-highlight mb-3 text-center">
+		<div class="p-2 bd-highlight">
+			<a class="btn btn-primary" href="https://fr.linkedin.com/in/yvain-praga-388b30179">
+				<i class="fab fa-linkedin"> My Linkedin profile</i>
+			</a>
+		</div>
+		<div class="p-2 bd-highlight">
+			<kbd>praga.yvain@gmail.com</kbd>
+			<button class="btn btn-warning btn-sm" onclick="copyStringToClipboard()">
+				Copy my email
+			</button>
+		</div>
+		<div class="p-2 bd-highlight">
+			<a class="btn btn-dark" href="https://github.com/YvainP">
+				<i class="fab fa-github"> My Github profile</i>
+			</a>
+		</div>
+	</div>
+</div>
+<script>
+function copyStringToClipboard () {
+	let str = "praga.yvain@gmail.com";
+	// Create new element
+	var el = document.createElement('textarea');
+	// Set value (string to be copied)
+	el.value = str;
+	// Set non-editable to avoid focus and move outside of view
+	el.setAttribute('readonly', '');
+	el.style = {position: 'absolute', left: '-9999px'};
+	document.body.appendChild(el);
+	// Select text inside element
+	el.select();
+	// Copy text to clipboard
+	document.execCommand('copy');
+	// Remove temporary element
+	document.body.removeChild(el);
+}
+</script>
 {% endblock %}
