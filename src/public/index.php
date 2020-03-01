@@ -36,5 +36,11 @@ $app->get('/contact', function (Request $request, Response $response){
     return $this->view->render($response, 'contact.html.twig');
 })->setName('contact');
 
+//blog
+$app->get('/blog', function (Request $request, Response $response){
+    return $this->view->render($response, 'blog.html.twig');
+})->setName('blog');
+
+
 //lancement de l'appli
 $app->run();
